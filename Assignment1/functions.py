@@ -11,8 +11,7 @@ def mean(a:float, b:float) -> float:
     '''
     Calculate and return the mean value for two given float numbers.
     '''
-    return (a+b) / 2
-
+    return (a+b) / 2.0
 
 def computeDis(a:float, c:float) -> float:
     '''
