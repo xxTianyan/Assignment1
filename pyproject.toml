@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "NumericalFunc"
+version = "0.0.1"
+authors = [
+  { name="Tianyan Xu", email="xuty@bu.edu" },
+]
+description = "Numerical algorithms learned from ME700"
+readme = "README.md"
+license = { file="LICENSE" }
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+dependencies = [
+    "numpy>=1.21.0",
+    "matplotlib>=3.5",
+    "pytest==7.1.2",
+    "pytest-cov==3.0.0",
+    "scipy==1.12.0"
+]
+
+[tool.setuptools]
+packages = ["algorithms"]  
+package-dir = {"algorithms" = "src/algorithms"}  
