@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 
 import numpy as np
 
-def NewtonSolver(func, x, jac, tol=1.48e-8, maxiter=50):
+def NewtonSolver(func, x, jac, tol=1.48e-8, maxiter=50, plot=False):
     '''
     Newton's method for solving roots of multivariate equations.
     ------------------------------------------------------------------
@@ -37,21 +37,32 @@ def NewtonSolver(func, x, jac, tol=1.48e-8, maxiter=50):
     residual = np.linalg.norm(Fx)
     if residual <= tol:
         return x, {'converged': True, 'iterations': 0, 'final_residual': residual}
+    convergence = []
 
     for it in range(maxiter):
         Jx = jac(x)
         try:
             delta_x = np.linalg.solve(Jx, -Fx)
         except np.linalg.LinAlgError:
-            # If singular, use the least squares solution.
-            delta_x = np.linalg.lstsq(Jx, -Fx, rcond=None)[0]
-
+            if np.linalg.norm(Jx) < 1e-8:
+                delta_x = -0.1 * Fx  # 采用固定步长
+            #   delta_x = np.linalg.lstsq(Jx, -Fx, rcond=None)[0]
+            
         x += delta_x
         Fx = func(x)
         residual = np.linalg.norm(Fx)
+        convergence.append(residual)
         if residual <= tol:
             converged = True
             break
+    
+    if plot == True:
+        fig, ax = plt.subplots()
+        ax.plot(range(len(convergence)), convergence, '-o')
+        ax.axhline(y=0, color='darkred', linestyle='--', linewidth=2)
+        ax.set_xlabel('Iteration times')
+        ax.set_ylabel('Residual')
+        plt.show()
 
     info = {
         'converged': converged,
