@@ -22,23 +22,6 @@ pip install numpy
 NewtonSolver(func, x, jac, tol=1.48e-8, maxiter=50)
 ```
 
-## Example Usage
-```python
-import numpy as np
-
-def func(x):
-    return np.array([x[0]**2 + x[1]**2 - 4, x[0] * np.exp(x[1]) - 1])
-
-def jac(x):
-    return np.array([[2*x[0], 2*x[1]], [np.exp(x[1]), x[0]*np.exp(x[1])]])
-
-x0 = np.array([1.0, 1.0])  # Initial guess
-root, info = NewtonSolver(func, x0, jac)
-
-print("Root:", root)
-print("Convergence Info:", info)
-```
-
 ## Error Handling
 The function includes various **input validations**:
 - Ensures `func` and `jac` are **callable**.
