@@ -11,9 +11,10 @@
 - Allows customizable **tolerance (`tol`)** and **maximum iterations (`maxiter`)**.
 
 ## Installation
-No additional installation is required. The function only depends on **NumPy**, which is included in most Python distributions. You can install NumPy using:
+No additional installation is required. The function only depends on **NumPy** and **Matplotlib**, which is included in most Python distributions. You can install NumPy using:
 ```sh
 pip install numpy
+pip install mayplotlib
 ```
 
 ## Usage
