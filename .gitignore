@@ -1,0 +1,27 @@
+# -------------------------------
+# Python temporary files and build artifacts
+# -------------------------------
+
+# Build directories
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Executable installation packages
+*.egg
+*.whl
+
+# Local development environments
+.venv/
+env/
+venv/
+
+# IDE configuration files
+.vscode/
+.idea/
