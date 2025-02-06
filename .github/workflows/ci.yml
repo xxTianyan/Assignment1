@@ -2,8 +2,8 @@ name: CI Tests and Coverage
 
 on: # 触发条件
   push:
-    branches: [ "main", "master" ]  # 推送到 main/master 分支时触发
-  pull_request: # 任何 PR 都会触发
+    branches: [ "main", "master" ]  
+  pull_request: 
     branches: [ "main", "master" ]
 
 jobs:
@@ -24,16 +24,14 @@ jobs:
     # ------------------------- 3. 安装依赖 -------------------------
     - name: Install dependencies
       run: |
-        python -m pip install --upgrade pip
-        pip install pytest numpy coverage codecov
-        # 如果有 requirements.txt：
-        # pip install -r requirements.txt
+        pip install --upgrade pip setuptools wheel
+        pip install e .
 
     # ------------------------- 4. 运行测试并生成覆盖率 -------------
     - name: Run tests with coverage
       run: |
         coverage run -m pytest tests/ -v
-        coverage xml  # 生成 XML 报告（Codecov 需要）
+        coverage xml  
 
     # ------------------------- 5. 上传覆盖率到 Codecov -------------
     - name: Upload to Codecov
