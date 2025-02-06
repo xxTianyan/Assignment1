@@ -30,13 +30,11 @@ jobs:
     # ------------------------- 4. 运行测试并生成覆盖率 -------------
     - name: Run tests with coverage
       run: |
-        coverage run -m pytest tests/ -v
-        coverage xml  
+        pytest --cov --cov-report=xml
+        
 
     # ------------------------- 5. 上传覆盖率到 Codecov -------------
-    - name: Upload to Codecov
-      uses: codecov/codecov-action@v4
-      with:
-        files: ./coverage.xml  # 覆盖率文件路径
-        flags: unittests       # 可选：标记测试类型
-        name: codecov-actions  # 可选：任务名称
+    - name: Upload coverage reports to Codecov with GitHub Action
+      uses: codecov/codecov-action@v5
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
