@@ -69,6 +69,7 @@ def test_initial_convergence():
     assert info['converged'] == True
     assert info['iterations'] == 0
     assert info['final_residual'] <= 1.48e-8
+    assert jac(x_initial) == np.array([[1.0]])
 
 # ===================================================================
 # Test4: triggering maxiter when convergence is not possible
