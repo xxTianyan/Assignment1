@@ -1,6 +1,6 @@
 import numpy as np
 import pytest
-from function import NewtonSolver
+from algorithms.newton_method import NewtonSolver
 
 # ===================================================================
 # Test 1: Basic Functionality Test (Single-Variable Equation)
