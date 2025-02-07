@@ -76,6 +76,7 @@ The function returns:
 ### Example Usage
 ```python
 import numpy as np
+from algorithms.newton_method import NewtonSolver
 
 def func(x):
     return np.array([x[0]**2 + x[1] - 4, x[0] + x[1]**2 - 4])
@@ -124,6 +125,7 @@ CreateBisecSolver(f: Callable[[float], float], tolerance: float) -> Callable[[fl
 ### Example Usage
 ```python
 import numpy as np
+from algorithms.bisection import CreateBisecSolver
 
 def func(x):
     return x**2 - 4
