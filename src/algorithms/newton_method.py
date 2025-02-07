@@ -1,8 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-import numpy as np
-
 def NewtonSolver(func, x, jac, tol=1.48e-8, maxiter=50, plot=False):
     '''
     Newton's method for solving roots of multivariate equations.
