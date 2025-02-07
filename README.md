@@ -9,11 +9,6 @@
 ## Description
 This repository contains all the numerical algorithms that learned in the BU course ME700. 
 
-## Features
-- Feature 1
-- Feature 2
-- Feature 3
-
 ## Installation
 Firt clone or down the repository to your local environment:
 ```sh
@@ -37,8 +32,33 @@ pip install -e .
 ```
 Test that the code is working with pytest:
 ```sh
-pytest -v --cov=numerical --cov-report term-missing
+pytest
 ```
+In order to see the tutorial, you need to install jupyter notebook:
+```sh
+pip install jupyter notebook
+```
+
+## Usage
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
