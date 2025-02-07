@@ -1,4 +1,4 @@
-# Project Name
+# ME700 Course Code
 
 ![Python Version](https://img.shields.io/badge/python-3.12-blue)
 ![OS](https://img.shields.io/badge/os-ubuntu%20%7C%20macos%20%7C%20windows-blue)
@@ -15,44 +15,31 @@ This repository contains all the numerical algorithms that learned in the BU cou
 - Feature 3
 
 ## Installation
+Firt clone or down the repository to your local environment:
 ```sh
 # Clone the repository
-git clone https://github.com/yourusername/yourrepo.git
+git clone https://github.com/xxTianyan/ME700.git
 cd yourrepo
-
-# Create a virtual environment
-python -m venv venv
-source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-
-# Install dependencies
-pip install -r requirements.txt
 ```
-
-## Usage
+Create a virtual environment, here we use conda:
 ```sh
-python main.py
+# Create a new conda environment and activate it
+conda create -n numerical python=3.12
+conda activate numerical
 ```
-Or describe how to use your project.
-
-## Running Tests
+Ensure that pip is using the most up to date version of setuptools:
 ```sh
-pytest tests/
+pip install --upgrade pip setuptools wheel
+```
+Create an editable install of the bisection method code (note: you must be in the correct directory):
+```sh
+pip install -e .
+```
+Test that the code is working with pytest:
+```sh
+pytest -v --cov=numerical --cov-report term-missing
 ```
 
-## Contributing
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature-branch`)
-3. Commit your changes (`git commit -m 'Add new feature'`)
-4. Push to the branch (`git push origin feature-branch`)
-5. Open a pull request
 
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgements
-- List any resources, libraries, or inspirations for your project.
-
----
-Feel free to edit this README to match your project!
 
 
