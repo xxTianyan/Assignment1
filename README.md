@@ -39,7 +39,66 @@ In order to see the tutorial, you need to install jupyter notebook:
 pip install jupyter notebook
 ```
 
-## Usage
+## NewtonSolver
+
+### Overview
+`NewtonSolver` is a Python implementation of Newton's method for solving nonlinear systems of equations. It iteratively refines an initial guess to find a root where the function evaluates to zero. The solver supports multivariate functions and includes optional visualization of convergence behavior.
+
+### Features
+- Solves multivariate nonlinear equations using Newton's method
+- Accepts user-defined function and Jacobian
+- Allows setting tolerance and maximum iterations
+- Provides convergence information
+- Supports optional convergence plot
+
+### Usage
+#### Function Signature
+```python
+NewtonSolver(func, x, jac, tol=1.48e-8, maxiter=50, plot=False)
+```
+
+#### Parameters
+- `func` (*callable*): The function \( F(x) \) whose root is to be found. Should return a NumPy array.
+- `x` (*array-like*): Initial guess for the root, given as a 1D NumPy array.
+- `jac` (*callable*): Function computing the Jacobian matrix \( J(x) \).
+- `tol` (*float*, optional): Convergence tolerance. Defaults to `1.48e-8`.
+- `maxiter` (*int*, optional): Maximum number of iterations. Defaults to `50`.
+- `plot` (*bool*, optional): If `True`, plots the residual convergence. Defaults to `False`.
+
+#### Returns
+The function returns:
+- `x` (*numpy.ndarray*): Estimated root.
+- `info` (*dict*): Dictionary containing:
+  - `'converged'` (*bool*): Whether the solver converged.
+  - `'iterations'` (*int*): Number of iterations performed.
+  - `'final_residual'` (*float*): Final residual norm.
+
+### Example Usage
+```python
+import numpy as np
+
+def func(x):
+    return np.array([x[0]**2 + x[1] - 4, x[0] + x[1]**2 - 4])
+
+def jac(x):
+    return np.array([[2*x[0], 1], [1, 2*x[1]]])
+
+x0 = np.array([2.0, 2.0])
+root, info = NewtonSolver(func, x0, jac, plot=True)
+
+print("Root:", root)
+print("Convergence Info:", info)
+```
+
+### Error Handling
+- Ensures `func` and `jac` are callable.
+- Requires `x` to be a 1D NumPy array.
+- Validates `tol` to be positive and `maxiter` to be at least 1.
+- Handles singular Jacobian matrices by applying a fallback method.
+
+
+
+
 
 
 
