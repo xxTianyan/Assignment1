@@ -97,6 +97,55 @@ print("Convergence Info:", info)
 - Handles singular Jacobian matrices by applying a fallback method.
 
 
+## Bisection Method
+
+### Overview
+The repository also includes an implementation of the **Bisection Method**, a root-finding algorithm that repeatedly bisects an interval and selects the subinterval containing the root. 
+
+### Features
+- Implements the **Bisection Method** for root-finding
+- Checks for correct interval selection
+- Allows configurable tolerance
+
+### Usage
+
+#### Function Signature
+```python
+CreateBisecSolver(f: Callable[[float], float], tolerance: float) -> Callable[[float, float], float]
+```
+
+#### Parameters
+- `f` (*callable*): The function \( f(x) \) whose root is to be found.
+- `tolerance` (*float*): The stopping criterion; the algorithm halts when the function value is smaller than this threshold.
+
+#### Returns
+- A solver function that takes an interval `[a, b]` and returns the estimated root.
+
+### Example Usage
+```python
+import numpy as np
+
+def func(x):
+    return x**2 - 4
+
+solver = CreateBisecSolver(func, tolerance=1e-6)
+root = solver(1, 3)
+print("Root:", root)
+```
+
+### Error Handling
+- Ensures `func` is callable.
+- Validates `tolerance` is greater than zero.
+- Checks that the input interval contains a sign change.
+
+## License
+This function is open-source and can be freely modified and distributed.
+
+## Author
+Tianyan Xu
+
+
+
 
 
 
