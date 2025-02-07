@@ -19,7 +19,7 @@ Firt clone or down the repository to your local environment:
 ```sh
 # Clone the repository
 git clone https://github.com/xxTianyan/ME700.git
-cd yourrepo
+cd ME700
 ```
 Create a virtual environment, here we use conda:
 ```sh
