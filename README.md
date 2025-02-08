@@ -10,7 +10,7 @@
 This repository contains all the numerical algorithms that learned in the BU course ME700. 
 
 ## Installation
-Firstly, clone or down the repository to your local environment:
+Firstly, clone or download the repository to your local environment:
 ```sh
 # Clone the repository
 git clone https://github.com/xxTianyan/ME700.git
