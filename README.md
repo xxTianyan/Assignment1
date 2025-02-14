@@ -140,6 +140,48 @@ print("Root:", root)
 - Validates `tolerance` is greater than zero.
 - Checks that the input interval contains a sign change.
 
+
+## ElastoPlastic Material Model
+
+A Python class implementing 1D elasto-plastic material behavior with isotropic and kinematic hardening models.
+
+### Features
+- **Two Hardening Models**:
+  - Isotropic Hardening (Yield surface expansion)
+  - Kinematic Hardening (Bauschinger effect)
+- **Stress-Strain Calculation**:
+  - Elastic predictor-plastic corrector algorithm
+  - Automatic yield surface updates
+- **Visualization**:
+  - Built-in stress-strain curve plotting
+  - PNG output support
+
+### Example Usage
+'''python
+from elastoplastic import ElastoPlastic, generate_strain_path
+
+# Create material
+material = ElastoPlastic(
+    E=200000,       # Young's modulus (MPa)
+    H=10000,        # Hardening modulus (MPa)
+    Yi=400,         # Initial yield stress (MPa)
+    mode='isotropic' # 'isotropic' or 'kinematic'
+)
+
+# Generate strain path
+strain_path = generate_strain_path(
+    max_strain=0.06, 
+    n_steps=1000,
+    plot=True
+)
+
+# Apply loading
+material.apply_loading(strain_path)
+
+# Plot results
+material.plot_curve(save_path='stress_strain.png')
+'''
+
 ## License
 This function is open-source and can be freely modified and distributed.
 
