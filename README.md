@@ -158,7 +158,7 @@ A Python class implementing 1D elasto-plastic material behavior with isotropic a
 
 ### Example Usage
 ```python
-from elastoplastic import ElastoPlastic, generate_strain_path
+from algorithms.ElastoPlastic import ElastoPlastic, generate_strain_path
 
 # Create material
 material = ElastoPlastic(
