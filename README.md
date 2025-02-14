@@ -157,7 +157,7 @@ A Python class implementing 1D elasto-plastic material behavior with isotropic a
   - PNG output support
 
 ### Example Usage
-'''python
+```python
 from elastoplastic import ElastoPlastic, generate_strain_path
 
 # Create material
@@ -180,7 +180,7 @@ material.apply_loading(strain_path)
 
 # Plot results
 material.plot_curve(save_path='stress_strain.png')
-'''
+```
 
 ## License
 This function is open-source and can be freely modified and distributed.
