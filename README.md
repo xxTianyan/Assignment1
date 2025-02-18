@@ -7,8 +7,7 @@
 ![Tests](https://github.com/xxTianyan/ME700/actions/workflows/ci.yml/badge.svg)
 
 ## Description
-This repository contains all the numerical algorithms that learned in the BU course ME700. 
-
+This repository contains codes for assignment 1 in course ME700
 ## Installation
 Firstly, clone or download the repository to your local environment:
 ```sh
