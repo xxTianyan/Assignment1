@@ -50,6 +50,17 @@ def CreateBisecSolver(f: Callable[[float], float], tolerance:float) -> Callable[
     '''
     Accepts a given callable function and tolerance and returns a bisection solver.
     The solver takes different intervals and find the 0 point between them.
+    Parameters:
+    -----------
+    f : Callable[[float], float]
+        The function for which the root is to be found.
+    tolerance : float
+        The stopping criterion for the algorithm; must be greater than zero.
+
+    Returns:
+    --------
+    Callable[[float, float], float]
+        A function that performs the bisection method on the interval `[a, b]` and returns the root.
     '''
 
     # tolerance should larger than zero
