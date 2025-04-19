@@ -181,11 +181,6 @@ material.apply_loading(strain_path)
 material.plot_curve(save_path='stress_strain.png')
 ```
 
-## License
-This function is open-source and can be freely modified and distributed.
-
-## Author
-Tianyan Xu
 
 
 
